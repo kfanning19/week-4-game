@@ -33,6 +33,7 @@ h1{
 }
 
 /*Gem*/
+
 img {
 	height: 95px;
 	width: 95px;
@@ -47,4 +48,11 @@ img {
 
 .rules p{
 	font-size: 16px;
+}
+
+/*Stats*/
+
+span {
+	font-size: 18px;
+	font-weight: bold;
 }
