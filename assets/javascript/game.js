@@ -27,41 +27,48 @@ var amethystNumber = 0;
 		// $(".message").text("");
 
 		//jewels are randomly assigned a value (need an array and math.random())
-		sapphireNumber = Math.round(Math.random() * 12 + 1);
-		rubyNumber = Math.round(Math.random() * 12 + 1);
-		emeraldNumber = Math.round(Math.random() * 12 + 1);
-		amethystNumber = Math.round(Math.random() * 12 + 1); 
+		sapphireNumber = Math.round(Math.random() * 11 + 1);
+		rubyNumber = Math.round(Math.random() * 11 + 1);
+		emeraldNumber = Math.round(Math.random() * 11 + 1);
+		amethystNumber = Math.round(Math.random() * 11 + 1); 
 		
+		console.log(sapphireNumber);
+		console.log(rubyNumber);
+		console.log(emeraldNumber);
+		console.log(amethystNumber);
 		//the targetScore is randomly generated and displayed (need math.random() and getElementById)
 			
 	};
 	startGame();
-	console.log(targetScore);
+
 
 	// clicking functions .on ("click",)
 		// button clicked needs to add to the userScore by amount assigned at the beginning of the game
 		// increase in userScore needs to be displayed (userScore +=)
-		$(".sapphire").on("click", function(){
-			userScore += sapphireNumber;
-			$(".userScore").text(userScore);
-			gameOver();
-		});
-		$(".ruby").on("click", function(){
-			userScore += rubyNumber;
-			$(".userScore").text(userScore);
-			gameOver();
-		});
-		$(".emerald").on("click", function(){
-			userScore += emeraldNumber;
-			$(".userScore").text(userScore);
-			gameOver();
-		});
-		$(".amethyst").on("click", function(){
-			userScore += amethystNumber;
-			$(".userScore").text(userScore);
-			gameOver();
-		});
-	
+$(".sapphire").on("click", function(){
+	userScore += sapphireNumber;
+	$(".userScore").text(userScore);
+	gameOver();
+});
+
+$(".ruby").on("click", function(){
+	userScore += rubyNumber;
+	$(".userScore").text(userScore);
+	gameOver();
+});
+
+$(".emerald").on("click", function(){
+	userScore += emeraldNumber;
+	$(".userScore").text(userScore);
+	gameOver();
+});
+
+$(".amethyst").on("click", function(){
+	userScore += amethystNumber;
+	$(".userScore").text(userScore);
+	gameOver();
+});
+
 	// gameover function
 	function gameOver(){
 		// if userScore === targetScore, "You Win!" is displayed
@@ -69,7 +76,7 @@ var amethystNumber = 0;
 		if (userScore === targetScore) {
 			winCounter++;
 			$(".winCounter").text(winCounter);
-			$(".message").text("You Win! Click a crystal to play again.");
+			$(".message").html("You Win! Click a crystal to play again.");
 			startGame();
 		}
 		// else userScore >= targetScore, "You Lose" is displayed
@@ -77,7 +84,7 @@ var amethystNumber = 0;
 		else if (userScore >= targetScore){
 			lossCounter++;
 			$(".lossCounter").text(lossCounter);
-			$(".message").text("You Lose! Click a crystal to try again.");
+			$(".message").html("You Lost! Click a crystal to try again.");
 			
 		// call start function to restart game without refresh
 			startGame();
