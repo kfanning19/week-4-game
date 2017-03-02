@@ -69,7 +69,7 @@ var amethystNumber = 0;
 		if (userScore === targetScore) {
 			winCounter++;
 			$(".winCounter").text(winCounter);
-			$(".message").text("You Win!");
+			$(".message").text("You Win! Click a crystal to play again.");
 			startGame();
 		}
 		// else userScore >= targetScore, "You Lose" is displayed
@@ -77,7 +77,7 @@ var amethystNumber = 0;
 		else if (userScore >= targetScore){
 			lossCounter++;
 			$(".lossCounter").text(lossCounter);
-			$(".message").text("You Lose!");
+			$(".message").text("You Lose! Click a crystal to try again.");
 			
 		// call start function to restart game without refresh
 			startGame();
