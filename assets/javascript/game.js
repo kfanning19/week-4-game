@@ -28,7 +28,19 @@ $(document).ready(function() {
 		rubyNumber = Math.round(Math.random() * 11 + 1);
 		emeraldNumber = Math.round(Math.random() * 11 + 1);
 		amethystNumber = Math.round(Math.random() * 11 + 1); 
-		
+
+
+		// if else statement to prevent repeat numbers
+		if (sapphireNumber === rubyNumber){
+			rubyNumber = Math.round(Math.random() * 11 + 1);
+
+		} else if (emeraldNumber === sapphireNumber || emeraldNumber === rubyNumber){
+			emeraldNumber = Math.round(Math.random() * 11 + 1);
+
+		} else if (amethystNumber === sapphireNumber || amethystNumber === rubyNumber || amethystNumber || emeraldNumber){
+			amethystNumber = Math.round(Math.random() * 11 + 1);
+		};
+
 	};
 
 	// Call startGame Function
