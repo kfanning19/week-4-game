@@ -11,17 +11,20 @@ var rubyNumber = 0;
 var emeraldNumber = 0;
 var amethystNumber = 0;
 
+
 	// start function
 	function startGame (){
-		//userScore resets to 0
-
+		// reset scores and targets to 0 and display to user
 		userScore = 0;
 		$(".userScore").text(userScore);
 		targetScore = 0;
 
+		//the targetScore is randomly generated and displayed 
 		targetScore = Math.round(Math.random() * 101 + 19);
 		$(".targetScore").text(targetScore);
 
+		// remove contents of .message
+		// $(".message").text("");
 
 		//jewels are randomly assigned a value (need an array and math.random())
 		sapphireNumber = Math.round(Math.random() * 12 + 1);
@@ -78,7 +81,11 @@ var amethystNumber = 0;
 			
 		// call start function to restart game without refresh
 			startGame();
-		};
+		} 
+		else if (userScore < targetScore){
+			$(".message").text("Keep Clicking!");
+		}
+
 	};
 
 });
