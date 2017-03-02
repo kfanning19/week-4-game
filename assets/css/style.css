@@ -19,6 +19,7 @@ h1,
 h3{
 	text-decoration: underline;
 }
+
 /*header*/
 .page-header{
 	border: none;
@@ -33,7 +34,6 @@ h1{
 }
 
 /*Gem*/
-
 img {
 	height: 95px;
 	width: 95px;
@@ -44,17 +44,15 @@ img {
 }
 
 h2 {
-	font-size: 22px;
+	font-size: 24px;
 }
 
 /*rules*/
-
 .rules p{
 	font-size: 20px;
 }
 
 /*Stats*/
-
 span {
 	font-size: 18px;
 	font-weight: bold;

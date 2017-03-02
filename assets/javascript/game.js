@@ -1,95 +1,92 @@
 // Javascript function 
 $(document).ready(function() {
 
-// variables
-var winCounter = 0;
-var lossCounter = 0;
-var userScore = 0;
-var targetScore = 0;
-var sapphireNumber = 0;
-var rubyNumber = 0;
-var emeraldNumber = 0;
-var amethystNumber = 0;
+	// variables
+	var winCounter = 0;
+	var lossCounter = 0;
+	var userScore = 0;
+	var targetScore = 0;
+	var sapphireNumber = 0;
+	var rubyNumber = 0;
+	var emeraldNumber = 0;
+	var amethystNumber = 0;
 
 
 	// start function
 	function startGame (){
-		// reset scores and targets to 0 and display to user
+		// reset scores and targets to 0 and display user Score to user to user
 		userScore = 0;
 		$(".userScore").text(userScore);
 		targetScore = 0;
 
-		//the targetScore is randomly generated and displayed 
+		//the targetScore is randomly generated between 19-120 and displayed 
 		targetScore = Math.round(Math.random() * 101 + 19);
 		$(".targetScore").text(targetScore);
 
-		// remove contents of .message
-		// $(".message").text("");
-
-		//jewels are randomly assigned a value (need an array and math.random())
+		// Crystals are randomly assigned a value between 1-12
 		sapphireNumber = Math.round(Math.random() * 11 + 1);
 		rubyNumber = Math.round(Math.random() * 11 + 1);
 		emeraldNumber = Math.round(Math.random() * 11 + 1);
 		amethystNumber = Math.round(Math.random() * 11 + 1); 
 		
-		console.log(sapphireNumber);
-		console.log(rubyNumber);
-		console.log(emeraldNumber);
-		console.log(amethystNumber);
-		//the targetScore is randomly generated and displayed (need math.random() and getElementById)
-			
 	};
+
+	// Call startGame Function
 	startGame();
 
 
-	// clicking functions .on ("click",)
-		// button clicked needs to add to the userScore by amount assigned at the beginning of the game
-		// increase in userScore needs to be displayed (userScore +=)
-$(".sapphire").on("click", function(){
-	userScore += sapphireNumber;
-	$(".userScore").text(userScore);
-	gameOver();
-});
+	// Click Functions
+		// 1. When clicked, increase by amount determined at start and display to user
+		// 2. Check to see if they have met the criteria for ending the game
 
-$(".ruby").on("click", function(){
-	userScore += rubyNumber;
-	$(".userScore").text(userScore);
-	gameOver();
-});
+	// Sapphire Button
+	$(".sapphire").on("click", function(){
+		userScore += sapphireNumber;
+		$(".userScore").text(userScore);
+		gameOver();
+	});
 
-$(".emerald").on("click", function(){
-	userScore += emeraldNumber;
-	$(".userScore").text(userScore);
-	gameOver();
-});
+	// Ruby Button
+	$(".ruby").on("click", function(){
+		userScore += rubyNumber;
+		$(".userScore").text(userScore);
+		gameOver();
+	});
 
-$(".amethyst").on("click", function(){
-	userScore += amethystNumber;
-	$(".userScore").text(userScore);
-	gameOver();
-});
+	// Emerald Button
+	$(".emerald").on("click", function(){
+		userScore += emeraldNumber;
+		$(".userScore").text(userScore);
+		gameOver();
+	});
+
+	// Amethyst Button
+	$(".amethyst").on("click", function(){
+		userScore += amethystNumber;
+		$(".userScore").text(userScore);
+		gameOver();
+	});
 
 	// gameover function
 	function gameOver(){
-		// if userScore === targetScore, "You Win!" is displayed
-			// winCounter++
+		
+		// Determine if they win, increase the counter, display win message and win count, and set up new game
 		if (userScore === targetScore) {
 			winCounter++;
 			$(".winCounter").text(winCounter);
-			$(".message").html("You Win! Click a crystal to play again.");
+			$(".message").html("You Won! Click a crystal to play again.");
 			startGame();
 		}
-		// else userScore >= targetScore, "You Lose" is displayed
-			// lossCounter++
+		// Determine if they lost, increase loss counter, display loss message and count, and set up new game
 		else if (userScore >= targetScore){
 			lossCounter++;
 			$(".lossCounter").text(lossCounter);
 			$(".message").html("You Lost! Click a crystal to try again.");
-			
-		// call start function to restart game without refresh
 			startGame();
 		} 
-		else if (userScore < targetScore){
+
+		// Display encouraging message/instruction until an if is met
+		else {
 			$(".message").text("Keep Clicking!");
 		}
 
