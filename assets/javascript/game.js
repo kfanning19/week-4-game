@@ -28,18 +28,22 @@ $(document).ready(function() {
 		rubyNumber = Math.round(Math.random() * 11 + 1);
 		emeraldNumber = Math.round(Math.random() * 11 + 1);
 		amethystNumber = Math.round(Math.random() * 11 + 1); 
-
-
-		// if else statement to prevent repeat numbers
-		if (sapphireNumber === rubyNumber){
+		
+		// Prevent repeated values in the crystals		
+		while(sapphireNumber === rubyNumber){
 			rubyNumber = Math.round(Math.random() * 11 + 1);
+		} 
 
-		} else if (emeraldNumber === sapphireNumber || emeraldNumber === rubyNumber){
+		while(emeraldNumber === sapphireNumber || emeraldNumber === rubyNumber){
 			emeraldNumber = Math.round(Math.random() * 11 + 1);
-
-		} else if (amethystNumber === sapphireNumber || amethystNumber === rubyNumber || amethystNumber || emeraldNumber){
+		} 
+		while(amethystNumber === sapphireNumber || amethystNumber === rubyNumber || amethystNumber === emeraldNumber){
 			amethystNumber = Math.round(Math.random() * 11 + 1);
 		};
+		console.log(sapphireNumber);
+		console.log(rubyNumber);
+		console.log(emeraldNumber);
+		console.log(amethystNumber);
 
 	};
 
